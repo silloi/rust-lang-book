@@ -1,5 +1,26 @@
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+impl Message {
+    fn call(&self) {
+        // method body would be defined here
+    }
+}
+
+struct QuitMessage;
+struct MoveMessage {
+    x: i32,
+    y: i32,
+}
+struct WriteMessage(String);
+struct ChangeColorMessage(i32, i32, i32);
+
 enum IpAddr {
-    V4(String),
+    V4(u8, u8, u8, u8),
     V6(String),
 }
 
@@ -11,6 +32,9 @@ enum IpAddr {
 // fn route(ip_kind: IpAddrKind) {}
 
 fn main() {
+    let m = Message::Write(String::from("hello"));
+    m.call();
+
     // let four = IpAddrKind::V4;
     // let six = IpAddrKind::V6;
 
@@ -27,7 +51,7 @@ fn main() {
     //     address: String::from("::1"),
     // };
 
-    let home = IpAddr::V4(String::from("127.0.0.1"));
+    let home = IpAddr::V4(127, 0, 0, 1);
 
     let loopback = IpAddr::V6(String::from("::1"));
 }
