@@ -1,13 +1,13 @@
+pub fn add_two(a: i32) -> i32 {
+    a + 3
+}
+
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn exploration() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
+    use super::*;
 
     #[test]
-    fn another() {
-        panic!("Make this test fail");
+    fn it_adds_two() {
+        assert_eq!(4, add_two(2));
     }
 }
