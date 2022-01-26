@@ -1,5 +1,5 @@
 pub fn add_two(a: i32) -> i32 {
-    a + 3
+    a + 2
 }
 
 #[cfg(test)]
@@ -12,11 +12,27 @@ mod tests {
     }
 
     #[test]
+    fn add_three_and_two() {
+        assert_eq!(5, add_two(3));
+    }
+
+    #[test]
+    fn one_hundred() {
+        assert_eq!(102, add_two(100));
+    }
+
+    #[test]
     fn it_works () -> Result<(), String> {
         if 2 + 2 == 4 {
             Ok(())
         } else {
             Err(String::from("two plus two does not equal four"))
         }
+    }
+
+    #[test]
+    #[ignore]
+    fn expensive_test() {
+        // code that takes an hour to run
     }
 }
