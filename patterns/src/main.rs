@@ -1,4 +1,29 @@
+fn print_coordinates(&(x, y): &(i32, i32)) {
+    println!("Current location: ({}, {})", x, y);
+}
+
 fn main() {
+    let point = (3, 5);
+    print_coordinates(&point);
+
+    // let (x, y) = (1, 2, 3);
+
+    let v = vec!['a', 'b', 'c'];
+
+    for (index, value) in v.iter().enumerate() {
+        println!("{} is at index {}", value, index);
+    }
+
+    let mut stack = Vec::new();
+
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    while let Some(top) = stack.pop() {
+        println!("{}", top);
+    }
+
     let favorite_color: Option<&str> = None;
     let is_tuesday = false;
     let age: Result<u8, _> = "34".parse();
