@@ -3,6 +3,15 @@ fn print_coordinates(&(x, y): &(i32, i32)) {
 }
 
 fn main() {
+    if let x = 5 {
+        println!("{}", x);
+    };
+
+    let some_option_value = Some(String::from("some"));
+    if let Some(x) = some_option_value {
+        println!("{}", x);
+    }; 
+
     let point = (3, 5);
     print_coordinates(&point);
 
